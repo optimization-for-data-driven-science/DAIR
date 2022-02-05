@@ -1,6 +1,4 @@
-# Train CIFAR10 with PyTorch
-
-I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
+# Robust Neural Network Training on CIFAR-10
 
 ## Prerequisites
 - Python 3.6+
