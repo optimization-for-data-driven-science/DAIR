@@ -49,7 +49,7 @@ def path_for(train=False, val=False, test=False, question=False, answer=False, p
         pre = prefix
     elif val:
         split = 'val2014'
-        pre = 'all'
+        pre = 'del1'
     else:
         split = 'test2014'
         pre = 'real_iv'

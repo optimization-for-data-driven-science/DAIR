@@ -105,10 +105,11 @@ class VQA(data.Dataset):
 
         self.coco_ids = [q['image_id'] for q in questions_json['questions']]         ### so image_id retrieved from json files
         self.ques_ids = [q['question_id'] for q in questions_json['questions']]
-        
+        #print(len(self.ques_ids))
         
         self.orig_IQA_list = [idx for idx, q in enumerate(questions_json['questions']) if len(str(q['image_id']))!=25]
         self.edit_IQA_list = [idx for idx, q in enumerate(questions_json['questions']) if len(str(q['image_id'])) == 25]
+        #print('Heree',len(self.edit_IQA_list))
         assert len(self.orig_IQA_list) + len(self.edit_IQA_list) == len(questions_json['questions'])
         #self.orig_IQA_list = self.orig_IQA_list[:500]
         
@@ -116,12 +117,16 @@ class VQA(data.Dataset):
             orig_ques_ids = self.ques_ids[0:len(self.orig_IQA_list)]
             edit_ques_ids = self.ques_ids[len(self.orig_IQA_list):]
             from collections import defaultdict
+            #print("hey",len(edit_ques_ids))
             self.orig_edit_qid = defaultdict(list)
             self.is_edit_aug = dict()
+            for i,eid in enumerate(self.ques_ids):
+                self.is_edit_aug[eid] = 0
+
             for idx, edit_id in enumerate(edit_ques_ids):
         #        if edit_id in orig_ques_ids:
                 self.orig_edit_qid[edit_id].append(idx+len(self.orig_IQA_list))
-                self.is_edit_aug[edit_id] = 1
+                self.is_edit_aug[edit_id] += 1
                # else:
                #     print(edit_id)
                 #if orig_id ==edit_id:

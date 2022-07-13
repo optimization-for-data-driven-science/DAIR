@@ -52,7 +52,7 @@ def main():  # main(args):
     net = Net().cuda()
     net.eval()
 
-    loader =  create_coco_loader(config.train_path, config.val_path, config.test_path,  config.edit_train_path ,  config.edit_val_path, config.del1_path_train, config.del1_path_val )
+    loader =  create_coco_loader(config.train_path, config.val_path, config.del1_path_train, config.del1_path_val )
     features_shape = (
         len(loader.dataset),
         config.output_features,
