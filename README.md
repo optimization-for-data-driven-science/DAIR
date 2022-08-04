@@ -96,11 +96,6 @@ python train.py
 
 ```
 ```
-  
-## References
-
-
-Please see the [paper](https://arxiv.org/pdf/2110.11205.pdf) for more details of DAIR as well as a complete list of related work.
     
     
 
