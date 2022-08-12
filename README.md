@@ -1,11 +1,5 @@
 # DAIR: Data Augmented Invariant Regularization
 
-This repository contains the implementation for the following papers. (It is still under construction)
-
-
-> [DAIR: Data Augmented Invariant Regularization](https://arxiv.org/abs/2110.11205), arXiv 2021
-
-
 While deep learning through empirical risk minimization (ERM) has succeeded at achieving human-level performance at a variety of complex tasks, ERM generalizes poorly to distribution shift. Synthetic data augmentation followed by empirical risk minimization (DA-ERM) is a simple and widely used solution to remedy this problem. In this paper, we propose data augmented invariant regularization (DAIR), a simple regularization that is applied directly on the loss function, making it widely applicable regardless of network architecture or problem setup. We apply DAIR to multiple real-world learning problems, namely robust regression, visual question answering, robust deep neural network training, and neural task-oriented dialog modeling. Our experiments show that DAIR consistently outperforms ERM and DA-ERM with little marginal cost and sets new state-of-the-art results in several benchmarks.
 
 This repository contains the data, code, and experiments to reproduce our empirical results. 
@@ -71,8 +65,8 @@ python main.py
 ```
 cd DAIR/invariant_vqa
 python train4.py --trained_model_save_folder <unique path> --_lambda <some value> --prefix real_iv
-```	
-	
+``` 
+  
 **6. Training Robust Neural Networks**
 
 * To run DAIR: 
@@ -102,11 +96,6 @@ python train.py
 
 ```
 ```
-	
-## References
-
-
-Please see the [paper](https://arxiv.org/pdf/2110.11205.pdf) for more details of DAIR as well as a complete list of related work.
     
     
 
