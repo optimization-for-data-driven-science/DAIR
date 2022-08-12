@@ -205,7 +205,7 @@ if __name__ == '__main__':
     parser.add_argument('--initial_lr',default = 1e-3, type = float)
     parser.add_argument('--lr_halflife',default = 50000, type = float)
     parser.add_argument('--trained_model_save_folder', default='./models/lambda_trial/', type = str)
-    parser.add_argument('--prefix', default='real_iv', type = str)
+    parser.add_argument('--prefix', default='del1', type = str)
     args = parser.parse_args()
     Path(args.trained_model_save_folder).mkdir(parents=True, exist_ok=True)
     main(args)

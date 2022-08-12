@@ -125,7 +125,7 @@ def main(args):
 
     cudnn.benchmark = True
 
-    train_dataset, train_loader = data.get_loader(train=True)
+    train_dataset, train_loader = data.get_loader(train=True, prefix = 'del1')
     val_dataset, val_loader = data.get_loader(val=True)
     #test_loader = data.get_loader(test=True)
 
