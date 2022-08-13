@@ -16,6 +16,7 @@ The following dependencies are needed. (The latest versions will work)
 * seaborn
 * scipy
 * cvxpy (optional)
+* parlai ([commit a9c40b78d368704315fcb2917eb2cafbdc430334](https://github.com/facebookresearch/ParlAI/commit/a9c40b78d368704315fcb2917eb2cafbdc430334))
 
 ## How to run the code for different applications
 
@@ -94,7 +95,7 @@ python train.py
 
 **7. Neural Task-oriented Dialog Modeling**
 
-Our code in this repository works with ParlAI commit a9c40b78d368704315fcb2917eb2cafbdc430334. Please copy all files under parlai folder to your parlai installation folder.
+Our code in this repository works with ParlAI commit [a9c40b78d368704315fcb2917eb2cafbdc430334](https://github.com/facebookresearch/ParlAI/commit/a9c40b78d368704315fcb2917eb2cafbdc430334). Please copy all files under parlai folder to your parlai installation folder.
  
 
 * To run normal training
