@@ -94,10 +94,38 @@ python train.py
 
 **7. Neural Task-oriented Dialog Modeling**
 
+Our code in this repository works with ParlAI commit a9c40b78d368704315fcb2917eb2cafbdc430334. Please copy all files under parlai folder to your parlai installation folder.
+ 
+
+* To run normal training
 ```
+parlai train_model --model bart --task multiwoz_v22 --seed_np 42 --batchsize 8 --model-file path_to_save --fp16 false --optimizer adamw --learningrate 1e-5  --save-every-n-secs 600 --truncate 448 --entity multiwoz --num-epochs 4 --datatype train:ordered
+```
+
+* To run DAIR training
+```
+parlai train_model --model bart --task multiwoz_v22 --seed_np 42 --comp_scramble true --scramble_mode create_gibberish_entity --batchsize 6 --model-file path_to_save --fp16 false --optimizer adamw --learningrate 1e-5  --save-every-n-secs 600 --truncate 448 --entity multiwoz --num-epochs 4 --bart_loss_fn loss1 --datatype train:ordered --comp_train True --reg_type sqrt --back_prop_replaced_entity_loss True --lambda_ your_lambda
+```
+
+* To run KL training
+```
+parlai train_model --model bart --task multiwoz_v22 --seed_np 42 --comp_scramble true --scramble_mode create_gibberish_entity --batchsize 6 --model-file path_to_save --fp16 false --optimizer adamw --learningrate 1e-5  --save-every-n-secs 600 --truncate 448 --entity multiwoz --num-epochs 4 --bart_loss_fn loss1 --datatype train:ordered --comp_train True --reg_type kl --back_prop_replaced_entity_loss True --lambda_ your_lambda
 ```
     
-    
+* To run normal testing
+```
+parlai eval_model --task multiwoz_v22 --seed_np 42 --model-file path_to_save --datatype test --entity multiwoz --batchsize 32
+```
+ 
+* To run testing with SGD entities
+```
+parlai eval_model --task multiwoz_v22 --seed_np 42 --model-file path_to_save --datatype test --entity g_sgd --batchsize 32
+```
+
+* To obtain Consistency Metric (CM) with SGD entities
+```
+parlai eval_model --task multiwoz_v22 --seed_np 42 --model-file path_to_save  --datatype test --entity1 multiwoz --entity2 g_sgd --new_metric True
+```
 
  
     
