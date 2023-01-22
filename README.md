@@ -1,4 +1,4 @@
-# DAIR: Data Augmented Invariant Regularization
+# DAIR: Robustness through Data Augmentation Loss Consistency
 
 While deep learning through empirical risk minimization (ERM) has succeeded at achieving human-level performance at a variety of complex tasks, ERM generalizes poorly to distribution shift. Synthetic data augmentation followed by empirical risk minimization (DA-ERM) is a simple and widely used solution to remedy this problem. In this paper, we propose data augmented invariant regularization (DAIR), a simple regularization that is applied directly on the loss function, making it widely applicable regardless of network architecture or problem setup. We apply DAIR to multiple real-world learning problems, namely robust regression, visual question answering, robust deep neural network training, and neural task-oriented dialog modeling. Our experiments show that DAIR consistently outperforms ERM and DA-ERM with little marginal cost and sets new state-of-the-art results in several benchmarks.
 
@@ -127,6 +127,13 @@ parlai eval_model --task multiwoz_v22 --seed_np 42 --model-file path_to_save --d
 ```
 parlai eval_model --task multiwoz_v22 --seed_np 42 --model-file path_to_save  --datatype test --entity1 multiwoz --entity2 g_sgd --new_metric True
 ```
+
+
+
+ ## References
+
+
+ Please see the [paper](https://openreview.net/forum?id=a1meaRy1bN) for more details of DAIR as well as a complete list of related work.
 
  
     
