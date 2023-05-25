@@ -130,10 +130,6 @@ parlai eval_model --task multiwoz_v22 --seed_np 42 --model-file path_to_save  --
 
 
 
- ## References
-
-
- Please see the [paper](https://openreview.net/forum?id=a1meaRy1bN) for more details of DAIR as well as a complete list of related work.
 
  
     
